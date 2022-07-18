@@ -62,6 +62,12 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
 	use("lunarvim/darkplus.nvim")
+	use("Mofiqul/dracula.nvim")
+	use("EdenEast/nightfox.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+  use("sainnhe/sonokai")
+  use 'marko-cerovac/material.nvim'
+
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
