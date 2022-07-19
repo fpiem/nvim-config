@@ -52,7 +52,7 @@ return packer.startup(function(use)
 	use({ "jinh0/eyeliner.nvim" }) -- Lua port of quickscope.vim
 	use({ "wellle/targets.vim" })
 	use({ "kylechui/nvim-surround" })
-  use({ "andymass/vim-matchup" })  -- Improve the % operator
+	use({ "andymass/vim-matchup" }) -- Improve the % operator
 
 	-- UI
 	use({ "akinsho/bufferline.nvim" })
@@ -63,7 +63,7 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
-  use({ "RRethy/vim-illuminate" })  -- Highlight variable under cursor
+	use({ "RRethy/vim-illuminate" }) -- Highlight variable under cursor
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
@@ -84,6 +84,9 @@ return packer.startup(function(use)
 	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "EdenEast/nightfox.nvim" })
+	use({ "marko-cerovac/material.nvim" })
+	use({ "Mofiqul/dracula.nvim" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- LSP
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
