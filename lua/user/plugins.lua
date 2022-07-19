@@ -97,8 +97,9 @@ return packer.startup(function(use)
   -- Terminal integration
 	use({ "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" })
 
-  -- Misc
-	use({ "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" })  -- Lua port of vim-commentary
+  -- Comments
+	use({ "numToStr/Comment.nvim" })
+  use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
