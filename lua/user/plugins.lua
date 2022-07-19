@@ -89,7 +89,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lua" })
 
 	-- Snippets
-	use({ "L3MON4D3/LuaSnip" }) --snippet engine
+	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	-- Search
@@ -101,6 +101,15 @@ return packer.startup(function(use)
 	-- Comments
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+
+	-- Misc
+	 -- Automatically save upon leaving insert mode
+  use({
+		"Pocco81/AutoSave.nvim",
+		config = function()
+			require("autosave").setup()
+		end,
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
