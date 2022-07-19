@@ -49,7 +49,7 @@ return packer.startup(function(use)
 
 	-- Movement & text objects
 	use({ "ggandor/leap.nvim" })
-	use({ "jinh0/eyeliner.nvim" })  -- Lua port of quickscope.vim
+	use({ "jinh0/eyeliner.nvim" }) -- Lua port of quickscope.vim
 	use({ "wellle/targets.vim" })
 	use({ "kylechui/nvim-surround" })
 
@@ -60,10 +60,11 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "moll/vim-bbye" })
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
+	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- Startup
 	use({ "ahmedkhalf/project.nvim" })
