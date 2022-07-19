@@ -61,6 +61,7 @@ return packer.startup(function(use)
 	use({ "moll/vim-bbye" })
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}  -- Better folding
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
@@ -77,7 +78,7 @@ return packer.startup(function(use)
 	use({ "EdenEast/nightfox.nvim" })
 
 	-- LSP
-	use({ "nvim-treesitter/nvim-treesitter" })
+	use({ "nvim-treesitter/nvim-treesitter", run=":TSUpdate" })
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
