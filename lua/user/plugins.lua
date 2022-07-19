@@ -49,6 +49,8 @@ return packer.startup(function(use)
 
 	-- Movement & text objects
 	use({ "ggandor/leap.nvim" })
+	use({ "jinh0/eyeliner.nvim" })  -- Lua port of quickscope.vim
+
 	use({ "wellle/targets.vim" })
 	use({ "kylechui/nvim-surround" })
 
@@ -103,8 +105,8 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
 	-- Misc
-	 -- Automatically save upon leaving insert mode
-  use({
+	-- Automatically save upon leaving insert mode
+	use({
 		"Pocco81/AutoSave.nvim",
 		config = function()
 			require("autosave").setup()
