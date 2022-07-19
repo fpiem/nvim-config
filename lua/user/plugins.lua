@@ -52,6 +52,7 @@ return packer.startup(function(use)
 	use({ "jinh0/eyeliner.nvim" }) -- Lua port of quickscope.vim
 	use({ "wellle/targets.vim" })
 	use({ "kylechui/nvim-surround" })
+  use({ "andymass/vim-matchup" })  -- Improve the % operator
 
 	-- UI
 	use({ "akinsho/bufferline.nvim" })
