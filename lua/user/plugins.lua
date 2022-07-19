@@ -118,13 +118,7 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
 	-- Misc
-	-- Automatically save upon leaving insert mode
-	use({
-		"Pocco81/AutoSave.nvim",
-		config = function()
-			require("autosave").setup()
-		end,
-	})
+	use({ "Pocco81/AutoSave.nvim" }) -- Automatically save upon leaving insert mode
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
