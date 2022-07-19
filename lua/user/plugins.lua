@@ -61,12 +61,17 @@ return packer.startup(function(use)
 	use({ "moll/vim-bbye" })
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}  -- Better folding
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
-  use({ "f-person/git-blame.nvim" })
+	use({ "f-person/git-blame.nvim" })
+	use({
+		"TimUntersberger/neogit",
+		requires = "nvim-lua/plenary.nvim",
+		config = require("neogit").setup(),
+	})
 
 	-- Startup
 	use({ "ahmedkhalf/project.nvim" })
@@ -79,7 +84,7 @@ return packer.startup(function(use)
 	use({ "EdenEast/nightfox.nvim" })
 
 	-- LSP
-	use({ "nvim-treesitter/nvim-treesitter", run=":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
