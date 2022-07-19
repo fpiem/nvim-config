@@ -50,6 +50,7 @@ return packer.startup(function(use)
 	-- Movement & text objects
 	use({ "ggandor/leap.nvim" })
 	use({ "wellle/targets.vim" })
+	use({ "kylechui/nvim-surround" })
 
 	-- UI
 	use({ "akinsho/bufferline.nvim" })
