@@ -47,8 +47,9 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" }) -- Useful lua functions used by several plugins
 	use({ "kyazdani42/nvim-web-devicons", commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" })
 
-  -- Movement
+  -- Movement & text objects
   use("ggandor/leap.nvim")
+  use({ "wellle/targets.vim" })
 
 	-- UI
 	use({ "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" })
