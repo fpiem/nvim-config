@@ -103,6 +103,17 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
 
+	-- Refactoring
+	-- TODO: look into this
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+		config = require("refactoring").setup(),
+	})
+
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
@@ -119,7 +130,7 @@ return packer.startup(function(use)
 
 	-- Misc
 	use({ "Pocco81/AutoSave.nvim" }) -- Automatically save upon leaving insert mode
-  use({ "echasnovski/mini.nvim" }) -- A collection of multiple useful modules
+	use({ "echasnovski/mini.nvim" }) -- A collection of multiple useful modules
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
