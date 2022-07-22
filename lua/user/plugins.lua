@@ -132,6 +132,9 @@ return packer.startup(function(use)
 	use({ "Pocco81/AutoSave.nvim" }) -- Automatically save upon leaving insert mode
 	use({ "echasnovski/mini.nvim" }) -- A collection of multiple useful modules
 
+  -- Copilot
+  use({ "github/copilot.vim" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
