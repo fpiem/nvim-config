@@ -103,6 +103,12 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
 
+	-- Debug
+	use({ "mfussenegger/nvim-dap" })
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({ "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } })
+  use({ "mfussenegger/nvim-dap-python" })  -- requires debugpy to be installed in the venv
+
 	-- Refactoring
 	-- TODO: look into this
 	use({
