@@ -85,7 +85,6 @@ return packer.startup(function(use)
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "EdenEast/nightfox.nvim" })
 	use({ "marko-cerovac/material.nvim" })
-	use({ "Mofiqul/dracula.nvim" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- LSP

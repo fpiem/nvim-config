@@ -50,7 +50,7 @@ catppuccin.setup({
     lsp_trouble = true,
     cmp = true,
     lsp_saga = false,
-    gitgutter = true,
+    gitgutter = false,
     gitsigns = true,
     telescope = true,
     nvimtree = {
@@ -81,10 +81,10 @@ catppuccin.setup({
     markdown = true,
     lightspeed = true,
     ts_rainbow = false,
-    hop = false,
+    hop = true,
     notify = true,
     telekasten = true,
     symbols_outline = true,
-    mini = false,
+    mini = true,
   }
 })
