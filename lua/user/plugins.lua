@@ -83,9 +83,8 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
-	use({ "EdenEast/nightfox.nvim" })
-	use({ "marko-cerovac/material.nvim" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
+  use({ "navarasu/onedark.nvim" })
 
 	-- LSP
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
