@@ -4,10 +4,9 @@ if not status_ok then
 end
 
 local status_ok, renamer = pcall(require, "renamer")
+local rename_command = "<cmd>lua vim.lsp.buf.rename()<cr>"
 if status_ok then
   rename_command = "<cmd>lua require('renamer').rename()<cr>"
-else
-  rename_command = "<cmd>lua vim.lsp.buf.rename()<cr>"
 end
 
 local setup = {
