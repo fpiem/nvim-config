@@ -53,6 +53,8 @@ return packer.startup(function(use)
 	use({ "wellle/targets.vim" })
 	use({ "kylechui/nvim-surround" })
 	use({ "andymass/vim-matchup" }) -- Improve the % operator
+	use({ "kana/vim-textobj-line", requires = "kana/vim-textobj-user"
+ })
 
 	-- UI
 	use({ "akinsho/bufferline.nvim" })
@@ -84,10 +86,11 @@ return packer.startup(function(use)
 	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
-  use({ "navarasu/onedark.nvim" })
+	use({ "navarasu/onedark.nvim" })
 
 	-- LSP
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
@@ -105,7 +108,7 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use({ "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } })
-  use({ "mfussenegger/nvim-dap-python" })  -- requires debugpy to be installed in the venv
+	use({ "mfussenegger/nvim-dap-python" }) -- requires debugpy to be installed in the venv
 
 	-- Refactoring
 	-- TODO: look into this
@@ -136,8 +139,8 @@ return packer.startup(function(use)
 	use({ "Pocco81/AutoSave.nvim" }) -- Automatically save upon leaving insert mode
 	use({ "echasnovski/mini.nvim" }) -- A collection of multiple useful modules
 
-  -- Copilot
-  use({ "github/copilot.vim" })
+	-- Copilot
+	use({ "github/copilot.vim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
