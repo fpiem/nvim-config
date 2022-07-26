@@ -66,7 +66,16 @@ return packer.startup(function(use)
 	use({ "moll/vim-bbye" })
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
+
+	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
+	use({ "anuvyklack/pretty-fold.nvim" })
+	use({
+		"anuvyklack/fold-preview.nvim",
+		requires = "anuvyklack/keymap-amend.nvim",
+		config = require("fold-preview").setup(),
+	})
+
 	use({ "RRethy/vim-illuminate" }) -- Highlight variable under cursor
 	use({
 		"filipdutescu/renamer.nvim",
