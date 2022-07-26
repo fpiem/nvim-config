@@ -47,9 +47,12 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by several plugins
 	use({ "kyazdani42/nvim-web-devicons" })
 
-	-- Movement & text objects
+	-- Movement
 	use({ "ggandor/leap.nvim" })
 	use({ "jinh0/eyeliner.nvim" }) -- Lua port of quickscope.vim
+	use({ "chentoast/marks.nvim", config = require("marks").setup() })
+
+	-- Text objects
 	use({ "wellle/targets.vim" })
 	use({ "kylechui/nvim-surround" })
 	use({ "andymass/vim-matchup" }) -- Improve the % operator
