@@ -3,6 +3,13 @@ if not status_ok then
   return
 end
 
+local status_ok, renamer = pcall(require, "renamer")
+if status_ok then
+  rename_command = "<cmd>lua require('renamer').rename()<cr>"
+else
+  rename_command = "<cmd>lua vim.lsp.buf.rename()<cr>"
+end
+
 local setup = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -152,7 +159,7 @@ local mappings = {
     },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    r = { rename_command, "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",

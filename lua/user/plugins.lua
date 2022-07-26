@@ -53,8 +53,7 @@ return packer.startup(function(use)
 	use({ "wellle/targets.vim" })
 	use({ "kylechui/nvim-surround" })
 	use({ "andymass/vim-matchup" }) -- Improve the % operator
-	use({ "kana/vim-textobj-line", requires = "kana/vim-textobj-user"
- })
+	use({ "kana/vim-textobj-line", requires = "kana/vim-textobj-user" })
 
 	-- UI
 	use({ "akinsho/bufferline.nvim" })
@@ -66,6 +65,11 @@ return packer.startup(function(use)
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
 	use({ "RRethy/vim-illuminate" }) -- Highlight variable under cursor
+	use({
+		"filipdutescu/renamer.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = require("renamer").setup(),
+	})
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
