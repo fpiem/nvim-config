@@ -57,15 +57,23 @@ return packer.startup(function(use)
 	use({ "kylechui/nvim-surround" })
 	use({ "andymass/vim-matchup" }) -- Improve the % operator
 	use({ "kana/vim-textobj-line", requires = "kana/vim-textobj-user" })
+	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 
 	-- UI
-	use({ "akinsho/bufferline.nvim" })
-	use({ "kyazdani42/nvim-tree.lua" })
+	use({ "akinsho/bufferline.nvim" }) -- Buffer & tab bar
+	use({ "kyazdani42/nvim-tree.lua" }) -- File explorer
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indentation guides
-	use({ "nvim-lualine/lualine.nvim" })
+	use({ "nvim-lualine/lualine.nvim" }) -- Status bar
 	use({ "moll/vim-bbye" })
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
+	use({ "RRethy/vim-illuminate" }) -- Highlight variable under cursor
+	use({
+		"filipdutescu/renamer.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = require("renamer").setup(),
+	})
+	use({ "karb94/neoscroll.nvim", config = require("neoscroll").setup() }) -- Smooth scrolling
 
 	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
@@ -74,13 +82,6 @@ return packer.startup(function(use)
 		"anuvyklack/fold-preview.nvim",
 		requires = "anuvyklack/keymap-amend.nvim",
 		config = require("fold-preview").setup(),
-	})
-
-	use({ "RRethy/vim-illuminate" }) -- Highlight variable under cursor
-	use({
-		"filipdutescu/renamer.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-		config = require("renamer").setup(),
 	})
 
 	-- Git
@@ -106,7 +107,6 @@ return packer.startup(function(use)
 
 	-- LSP
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
