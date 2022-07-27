@@ -154,6 +154,7 @@ return packer.startup(function(use)
 	-- Misc
 	use({ "Pocco81/AutoSave.nvim" }) -- Automatically save upon leaving insert mode
 	use({ "echasnovski/mini.nvim" }) -- A collection of multiple useful modules
+  use({ "ethanholz/nvim-lastplace" })
 
 	-- Copilot
 	use({ "github/copilot.vim" })
