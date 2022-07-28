@@ -78,7 +78,7 @@ return packer.startup(function(use)
 	use({ -- Show VSCode-like code context
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
-    config = require("nvim-navic").setup()
+		config = require("nvim-navic").setup(),
 	})
 
 	-- Code folding
@@ -108,8 +108,8 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
-	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({ "navarasu/onedark.nvim" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- LSP
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -161,6 +161,13 @@ return packer.startup(function(use)
 	use({ "Pocco81/AutoSave.nvim" }) -- Automatically save upon leaving insert mode
 	use({ "echasnovski/mini.nvim" }) -- A collection of multiple useful modules
 	use({ "ethanholz/nvim-lastplace" })
+	use({ -- clipboard manager
+		"AckslD/nvim-neoclip.lua",
+		requires = {
+			{ "kkharji/sqlite.lua", module = "sqlite" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+	})
 
 	-- Copilot
 	use({ "github/copilot.vim" })
