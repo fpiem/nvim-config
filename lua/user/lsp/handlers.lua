@@ -53,7 +53,15 @@ local function lsp_highlight_document(client)
 		return
 	end
 	illuminate.on_attach(client)
-	-- end
+end
+
+local function lsp_code_context(client, bufnr)
+	-- Set autocommands conditional on server_capabilities
+	local status_ok, navic = pcall(require, "nvim-navic")
+	if not status_ok then
+		return
+	end
+	navic.attach(client, bufnr)
 end
 
 local function lsp_keymaps(bufnr)
@@ -88,6 +96,7 @@ M.on_attach = function(client, bufnr)
 	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
+	lsp_code_context(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

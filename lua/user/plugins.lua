@@ -74,6 +74,12 @@ return packer.startup(function(use)
 		config = require("renamer").setup(),
 	})
 	use({ "karb94/neoscroll.nvim", config = require("neoscroll").setup() }) -- Smooth scrolling
+	-- use({ "nvim-treesitter/nvim-treesitter-context", config = require("treesitter-context").setup() })
+	use({ -- Show VSCode-like code context
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+    config = require("nvim-navic").setup()
+	})
 
 	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
@@ -154,7 +160,7 @@ return packer.startup(function(use)
 	-- Misc
 	use({ "Pocco81/AutoSave.nvim" }) -- Automatically save upon leaving insert mode
 	use({ "echasnovski/mini.nvim" }) -- A collection of multiple useful modules
-  use({ "ethanholz/nvim-lastplace" })
+	use({ "ethanholz/nvim-lastplace" })
 
 	-- Copilot
 	use({ "github/copilot.vim" })

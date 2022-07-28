@@ -3,6 +3,11 @@ if not status_ok then
 	return
 end
 
+local status_ok, navic = pcall(require, "nvim-navic")
+if not status_ok then
+	return
+end
+
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
@@ -62,6 +67,8 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+-- local navic = require("nvim-navic")
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -74,11 +81,12 @@ lualine.setup({
 	sections = {
 		lualine_a = { mode },
 		lualine_b = { branch },
-		lualine_c = { diagnostics },
+		lualine_c = { { navic.get_location, cond = navic.is_available } },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
+		lualine_x = { diagnostics, diff, spaces, "encoding", filetype },
 		lualine_y = {},
-		-- lualine_y = { location },
+		lualine_z = { location },
+		-- lualine_z = {{ navic.get_location, cond = navic.is_available }}
 		-- lualine_z = { progress },
 	},
 	inactive_sections = {
