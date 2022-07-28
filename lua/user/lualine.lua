@@ -17,14 +17,14 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	colored = true,
 	update_in_insert = false,
 	always_visible = true,
 }
 
 local diff = {
 	"diff",
-	colored = false,
+	colored = true,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
 	cond = hide_in_width,
 }
@@ -50,7 +50,7 @@ local branch = {
 
 local location = {
 	"location",
-	padding = 0,
+	padding = 1,
 }
 
 -- cool function for progress
@@ -80,10 +80,10 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { mode },
-		lualine_b = { branch },
+		lualine_b = { branch, diff },
 		lualine_c = { { navic.get_location, cond = navic.is_available } },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diagnostics, diff, spaces, "encoding", filetype },
+		lualine_x = { spaces, "encoding", filetype },
 		lualine_y = {},
 		lualine_z = { location },
 		-- lualine_z = {{ navic.get_location, cond = navic.is_available }}
