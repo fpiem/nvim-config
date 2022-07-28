@@ -64,6 +64,14 @@ local function lsp_code_context(client, bufnr)
 	navic.attach(client, bufnr)
 end
 
+local function lsp_symbols_outline(client, bufnr)
+	local status_ok, aerial = pcall(require, "aerial")
+	if not status_ok then
+		return
+	end
+  aerial.on_attach(client, bufnr)
+end
+
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -97,6 +105,7 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 	lsp_code_context(client, bufnr)
+  lsp_symbols_outline(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -80,6 +80,7 @@ return packer.startup(function(use)
 		requires = "neovim/nvim-lspconfig",
 		config = require("nvim-navic").setup(),
 	})
+	use({ "stevearc/aerial.nvim" })
 
 	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
