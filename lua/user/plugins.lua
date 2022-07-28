@@ -74,13 +74,13 @@ return packer.startup(function(use)
 		config = require("renamer").setup(),
 	})
 	use({ "karb94/neoscroll.nvim", config = require("neoscroll").setup() }) -- Smooth scrolling
-	-- use({ "nvim-treesitter/nvim-treesitter-context", config = require("treesitter-context").setup() })
-	use({ -- Show VSCode-like code context
+	use({
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
 		config = require("nvim-navic").setup(),
 	})
 	use({ "stevearc/aerial.nvim" })
+	use({ "nvim-treesitter/nvim-treesitter-context", config = require("treesitter-context").setup() })
 
 	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
