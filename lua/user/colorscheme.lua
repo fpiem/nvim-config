@@ -1,16 +1,15 @@
 vim.cmd [[
 try
   set termguicolors
+
   let g:material_style = "darker"
   let g:tokyonight_style = "night"
-  let g:catppuccin_flavour = "macchiato"
+  let g:catppuccin_flavour = "mocha"
+  let g:onedark_config = {
+      \ 'style': 'warmer',
+  \}
 
-let g:onedark_config = {
-    \ 'style': 'warmer',
-\}
-
-
-  colorscheme onedark
+  colorscheme dracula
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
