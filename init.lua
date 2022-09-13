@@ -31,3 +31,5 @@ require("user.pretty-fold")
 require("user.lastplace")
 require("user.neoclip")
 require("user.aerial")
+require("user.illuminate")
+

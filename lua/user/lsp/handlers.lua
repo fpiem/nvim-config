@@ -46,15 +46,6 @@ M.setup = function()
 	})
 end
 
-local function lsp_highlight_document(client)
-	-- Set autocommands conditional on server_capabilities
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
-	end
-	illuminate.on_attach(client)
-end
-
 local function lsp_code_context(client, bufnr)
 	-- Set autocommands conditional on server_capabilities
 	local status_ok, navic = pcall(require, "nvim-navic")
@@ -103,7 +94,6 @@ M.on_attach = function(client, bufnr)
 		client.resolved_capabilities.document_formatting = false
 	end
 	lsp_keymaps(bufnr)
-	lsp_highlight_document(client)
 	lsp_code_context(client, bufnr)
   lsp_symbols_outline(client, bufnr)
 end
