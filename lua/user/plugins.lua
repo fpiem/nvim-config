@@ -148,6 +148,9 @@ return packer.startup(function(use)
 
 	-- Search
 	use({ "nvim-telescope/telescope.nvim" })
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use({ "junegunn/fzf" })
+  use({ "junegunn/fzf.vim" })
 
 	-- Terminal integration
 	use({ "akinsho/toggleterm.nvim" })
@@ -170,6 +173,7 @@ return packer.startup(function(use)
 
 	-- Copilot
 	use({ "github/copilot.vim" })
+
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
