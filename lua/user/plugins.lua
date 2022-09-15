@@ -107,11 +107,8 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim" })
 
 	-- Colorschemes
-	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "navarasu/onedark.nvim" })
-	use({ "catppuccin/nvim", as = "catppuccin" })
-  use({"dracula/vim"})
 
 	-- LSP
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
