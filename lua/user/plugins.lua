@@ -49,7 +49,6 @@ return packer.startup(function(use)
 
 	-- Movement
 	use({ "ggandor/leap.nvim" })
-	use({ "jinh0/eyeliner.nvim" }) -- Lua port of quickscope.vim
 	use({ "chentoast/marks.nvim", config = require("marks").setup() })
 
 	-- Text objects
@@ -64,7 +63,6 @@ return packer.startup(function(use)
 	use({ "kyazdani42/nvim-tree.lua" }) -- File explorer
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indentation guides
 	use({ "nvim-lualine/lualine.nvim" }) -- Status bar
-	use({ "moll/vim-bbye" })
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
 	use({ "RRethy/vim-illuminate" }) -- Highlight variable under cursor
@@ -103,8 +101,7 @@ return packer.startup(function(use)
 
 	-- Startup
 	use({ "ahmedkhalf/project.nvim" })
-	use({ "lewis6991/impatient.nvim" })
-	use({ "goolord/alpha-nvim" })
+	use({ "lewis6991/impatient.nvim" })  -- Improve neovim startup time
 
 	-- Colorschemes
 	use({ "lunarvim/darkplus.nvim" })
@@ -131,17 +128,6 @@ return packer.startup(function(use)
 	use({ "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } })
 	use({ "mfussenegger/nvim-dap-python" }) -- requires debugpy to be installed in the venv
 
-	-- Refactoring
-	-- TODO: look into this
-	use({
-		"ThePrimeagen/refactoring.nvim",
-		requires = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-		config = require("refactoring").setup(),
-	})
-
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
@@ -161,7 +147,6 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
 	-- Misc
-	use({ "Pocco81/AutoSave.nvim" }) -- Automatically save upon leaving insert mode
 	use({ "echasnovski/mini.nvim" }) -- A collection of multiple useful modules
 	use({ "ethanholz/nvim-lastplace" })
 	use({ -- clipboard manager
@@ -173,7 +158,7 @@ return packer.startup(function(use)
 	})
 
 	-- Copilot
-	use({ "github/copilot.vim" })
+	--[[ use({ "github/copilot.vim" }) ]]
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
