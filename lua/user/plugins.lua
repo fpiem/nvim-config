@@ -79,6 +79,8 @@ return packer.startup(function(use)
 	})
 	use({ "stevearc/aerial.nvim" })
 	use({ "nvim-treesitter/nvim-treesitter-context", config = require("treesitter-context").setup() })
+	--[[ use({ "narutoxy/dim.lua", config = require("dim").setup({}) }) ]]
+	use({ "narutoxy/dim.lua", config = require("dim").setup() })
 
 	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
@@ -101,7 +103,7 @@ return packer.startup(function(use)
 
 	-- Startup
 	use({ "ahmedkhalf/project.nvim" })
-	use({ "lewis6991/impatient.nvim" })  -- Improve neovim startup time
+	use({ "lewis6991/impatient.nvim" }) -- Improve neovim startup time
 
 	-- Colorschemes
 	use({ "lunarvim/darkplus.nvim" })
