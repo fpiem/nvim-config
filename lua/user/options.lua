@@ -45,4 +45,9 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.conf", command = "set ft=hocon" })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.conf", command = "set filetype=hocon" })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.lock", command = "set filetype=.toml" })
+vim.api.nvim_create_autocmd(
+	{ "BufNewFile", "BufRead" },
+	{ pattern = "*Jenkinsfile*", command = "set filetype=.groovy" }
+)
