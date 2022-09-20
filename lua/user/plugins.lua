@@ -158,6 +158,7 @@ return packer.startup(function(use)
 			{ "nvim-telescope/telescope.nvim" },
 		},
 	})
+	use({ "AckslD/swenv.nvim" })
 
 	-- Copilot
 	--[[ use({ "github/copilot.vim" }) ]]
