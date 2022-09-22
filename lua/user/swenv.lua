@@ -7,9 +7,10 @@ local is_home_dir = function()
 	return vim.fn.getcwd(0) == vim.fn.expand("$HOME")
 end
 
+-- TODO: envinonment names, currently set to ""
+-- TODO2: add conda envs
 local get_python_interpreters = function()
 	local paths = {}
-	--[[ local commands = {'find $HOME/venvs -name python', 'which -a python', is_home_dir() and '' or 'find . -name python'} ]]
 	local commands = { "which -a python", is_home_dir() and "" or "find . -name python" }
 	for _, cmd in ipairs(commands) do
 		local _paths = vim.fn.systemlist(cmd)
@@ -25,6 +26,7 @@ local get_python_interpreters = function()
 	table.sort(paths)
 	for i, path in ipairs(paths) do
 		if path ~= paths[i + 1] then
+      -- TODO: extract names from env folder, then consider adding venv to lualine
 			table.insert(res, { name = "", path = path })
 		end
 	end
