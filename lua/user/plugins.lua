@@ -79,6 +79,7 @@ return packer.startup(function(use)
 	use({ "stevearc/dressing.nvim" })
 	use({ "rcarriga/nvim-notify" }) -- Prettier notifications
 	use({ "romainl/vim-cool" }) -- Avoid having to run :noh
+	use({ "petertriho/nvim-scrollbar", config=require("scrollbar").setup() })
 
 	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
