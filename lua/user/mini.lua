@@ -34,3 +34,11 @@ end
 trailspace.setup({
 	only_in_normal_buffers = true,
 })
+
+-- Convenient text objects with treesitter support
+local status_ok, ai = pcall(require, "mini.ai")
+if not status_ok then
+	return
+end
+
+ai.setup()
