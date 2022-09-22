@@ -66,11 +66,6 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
 	use({ "RRethy/vim-illuminate" }) -- Highlight variable under cursor
-	use({
-		"filipdutescu/renamer.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-		config = require("renamer").setup(),
-	})
 	use({ "karb94/neoscroll.nvim", config = require("neoscroll").setup() }) -- Smooth scrolling
 	use({
 		"SmiteshP/nvim-navic",
@@ -81,6 +76,9 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter-context", config = require("treesitter-context").setup() })
 	--[[ use({ "narutoxy/dim.lua", config = require("dim").setup({}) }) ]]
 	use({ "narutoxy/dim.lua", config = require("dim").setup() })
+	use({ "stevearc/dressing.nvim" })
+	use({ "rcarriga/nvim-notify" }) -- Prettier notifications
+	use({ "romainl/vim-cool" }) -- Avoid having to run :noh
 
 	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
