@@ -43,22 +43,22 @@ return packer.startup(function(use)
 	-- Package manager
 	use({ "wbthomason/packer.nvim" })
 
-	-- Common dependencies
+	-- -- Common dependencies
 	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by several plugins
 	use({ "kyazdani42/nvim-web-devicons" })
 
 	-- Movement
 	use({ "ggandor/leap.nvim" })
-	use({ "chentoast/marks.nvim", config = require("marks").setup() })
+	-- use({ "chentoast/marks.nvim", config = require("marks").setup() })
 
-	-- Text objects
+	-- -- Text objects
 	use({ "wellle/targets.vim" })
 	use({ "kylechui/nvim-surround" })
 	use({ "andymass/vim-matchup" }) -- Improve the % operator
 	use({ "kana/vim-textobj-line", requires = "kana/vim-textobj-user" })
 	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 
-	-- UI
+	-- -- UI
 	use({ "akinsho/bufferline.nvim" }) -- Buffer & tab bar
 	use({ "kyazdani42/nvim-tree.lua" }) -- File explorer
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indentation guides
@@ -66,20 +66,34 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim" }) -- Group and visualize keybindings
 	use({ "folke/trouble.nvim" }) -- VSCode-like problems pane
 	use({ "RRethy/vim-illuminate" }) -- Highlight variable under cursor
-	use({ "karb94/neoscroll.nvim", config = require("neoscroll").setup() }) -- Smooth scrolling
 	use({
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
-		config = require("nvim-navic").setup(),
+		config = function()
+			require("nvim-navic").setup()
+		end
 	})
 	use({ "stevearc/aerial.nvim" })
-	use({ "nvim-treesitter/nvim-treesitter-context", config = require("treesitter-context").setup() })
-	--[[ use({ "narutoxy/dim.lua", config = require("dim").setup({}) }) ]]
-	use({ "narutoxy/dim.lua", config = require("dim").setup() })
+	use({
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup()
+		end
+	})
+	use({
+		"narutoxy/dim.lua",
+		config = function()
+			require("dim").setup({})
+		end
+	})
+	use({
+		"narutoxy/dim.lua",
+		config = function() require("dim").setup() end
+	})
 	use({ "stevearc/dressing.nvim" })
 	use({ "rcarriga/nvim-notify" }) -- Prettier notifications
 	use({ "romainl/vim-cool" }) -- Avoid having to run :noh
-	use({ "petertriho/nvim-scrollbar", config=require("scrollbar").setup() })
+	-- use({ "petertriho/nvim-scrollbar", config=require("scrollbar").setup() })
 
 	-- Code folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- Better folding
@@ -87,7 +101,9 @@ return packer.startup(function(use)
 	use({
 		"anuvyklack/fold-preview.nvim",
 		requires = "anuvyklack/keymap-amend.nvim",
-		config = require("fold-preview").setup(),
+		config = function()
+			require("fold-preview").setup()
+		end
 	})
 
 	-- Git
@@ -97,7 +113,9 @@ return packer.startup(function(use)
 	use({
 		"TimUntersberger/neogit",
 		requires = "nvim-lua/plenary.nvim",
-		config = require("neogit").setup(),
+		config = function()
+			require("neogit").setup()
+		end
 	})
 
 	-- Startup
@@ -160,7 +178,7 @@ return packer.startup(function(use)
 	use({ "AckslD/swenv.nvim" })
 
 	-- Copilot
-	--[[ use({ "github/copilot.vim" }) ]]
+	-- [[ use({ "github/copilot.vim" }) ]]
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
