@@ -1,3 +1,4 @@
-require("fpiem.remap")
+require("fpiem.remaps")
+require("fpiem.plugins")
 print("hello!")
 
