@@ -1,4 +1,5 @@
+require("fpiem.options")
 require("fpiem.remaps")
 require("fpiem.plugins")
-print("hello!")
+require("fpiem.colorscheme")
 

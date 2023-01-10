@@ -1,2 +1,1 @@
 require("fpiem")
-print("hello!")
