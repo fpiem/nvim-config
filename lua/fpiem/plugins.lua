@@ -17,13 +17,17 @@ require("lazy").setup({
 		dependencies = { {'nvim-lua/plenary.nvim'} }
 	},
 
+  -- Treesitter (semantic highlighting)
 	{
 		'nvim-treesitter/nvim-treesitter',
 		lazy = false,
-		run = ':TSUpdate'
+		-- run = ':TSUpdate',
+    commit = "fd4525fd9e61950520cea4737abc1800ad4aabb"
 	},
-
-	{ 'nvim-treesitter/playground' },
+	-- {
+ --    'nvim-treesitter/playground',
+ --    dependencies = { "nvim-treesitter/nvim-treesitter" }
+ --  },
 
 	{
 		'akinsho/bufferline.nvim',
@@ -36,13 +40,27 @@ require("lazy").setup({
 		end
 	},
 
-	{
-		"folke/noice.nvim",
-		dependencies = {
-			{ "MunifTanjim/nui.nvim" }
-		}
-	},
 	{"nvim-tree/nvim-tree.lua", dependencies={"nvim-tree/nvim-web-devicons"}},
+
+	{
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({})
+		end,
+	},
+
+  -- Movement
+  { "ggandor/leap.nvim" },
+  {
+    "ggandor/flit.nvim", dependencies = { { "ggandor/leap.nvim" } }
+  },
+  {"ggandor/leap-spooky.nvim", 
+  dependencies = { { "ggandor/leap.nvim" } } ,
+  config = function ()
+    require('leap-spooky').setup {}
+  end
+
+},
 
 	-- LSP
 	{
@@ -68,6 +86,25 @@ require("lazy").setup({
 		}
 	},
 
+	{ "romainl/vim-cool" },  -- disable search highlights after moving the cursor
+
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  },
+
+  -- Fancy UI overrides
+	{
+		"folke/noice.nvim",
+		dependencies = {
+			{ "MunifTanjim/nui.nvim" }
+		}
+	},
+  { "stevearc/dressing.nvim" },
+
+
 	-- Themes
 	{ "Mofiqul/dracula.nvim" },
 	{"Mofiqul/vscode.nvim"},
@@ -77,4 +114,5 @@ require("lazy").setup({
 			require("monokai-pro").setup({})
 		end
 	},
+  {'folke/tokyonight.nvim'}
 })
