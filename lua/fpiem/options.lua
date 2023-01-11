@@ -14,7 +14,7 @@ local options = {
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
+  showtabline = 1,                         -- always show tabs
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
@@ -30,7 +30,7 @@ local options = {
   tabstop = 2,                             -- insert 2 spaces for a tab
   cursorline = true,                       -- highlight the current line
   number = true,                           -- set numbered lines
-  relativenumber = false,                  -- set relative numbered lines
+  relativenumber = true,                  -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
 
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
@@ -45,3 +45,11 @@ vim.opt.shortmess:append("c")
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
+
+-- highlight yanked text for 300ms using the "Visual" highlight group
+vim.cmd[[
+  augroup highlight_yank
+  autocmd!
+  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=300})
+  augroup END
+]]
