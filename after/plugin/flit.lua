@@ -12,3 +12,4 @@ flit.setup {
   -- E.g.: opts = { equivalence_classes = {} }
   opts = {}
 }
+

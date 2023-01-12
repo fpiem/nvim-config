@@ -29,3 +29,5 @@ nvim_tree.setup({
     dotfiles = true,
   },
 })
+
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Toggle the file tree" })

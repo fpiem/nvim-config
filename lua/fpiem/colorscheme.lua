@@ -1,1 +1,4 @@
-vim.cmd[[colorscheme dracula]]
+vim.cmd[[
+  let g:sonokai_style = 'shusia'
+  colorscheme sonokai
+]]

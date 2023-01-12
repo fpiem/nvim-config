@@ -17,27 +17,24 @@ require("lazy").setup({
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
 
-  -- Treesitter (semantic highlighting)
+  -- Treesitter
   {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
-    -- run = ':TSUpdate',
-    commit = "fd4525fd9e61950520cea4737abc1800ad4aabb"
+    run = ':TSUpdate',
   },
-  -- {
-  --    'nvim-treesitter/playground',
-  --    dependencies = { "nvim-treesitter/nvim-treesitter" }
-  --  },
+  {
+    'nvim-treesitter/playground',
+    dependencies = { "nvim-treesitter/nvim-treesitter" }
+  },
 
   {
     'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
   {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
 
   { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
@@ -49,18 +46,39 @@ require("lazy").setup({
     end,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup {}
+    end
+  },
+
+  { "RRethy/vim-illuminate" },
+
+  {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  },
+
   -- Movement
   { "ggandor/leap.nvim" },
+  { "ggandor/flit.nvim", dependencies = { { "ggandor/leap.nvim" } } },
   {
-    "ggandor/flit.nvim", dependencies = { { "ggandor/leap.nvim" } }
-  },
-  { "ggandor/leap-spooky.nvim",
+    "ggandor/leap-spooky.nvim",
     dependencies = { { "ggandor/leap.nvim" } },
     config = function()
       require('leap-spooky').setup {}
     end
-
   },
+
+  -- Git
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  },
+  { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
 
   -- LSP
   {
@@ -95,15 +113,15 @@ require("lazy").setup({
     end
   },
 
+  { "tpope/vim-surround" },
+  { "tpope/vim-fugitive" },
+
   -- Fancy UI overrides
   {
     "folke/noice.nvim",
-    dependencies = {
-      { "MunifTanjim/nui.nvim" }
-    }
+    dependencies = { { "MunifTanjim/nui.nvim" } }
   },
   { "stevearc/dressing.nvim" },
-
 
   -- Themes
   { "Mofiqul/dracula.nvim" },
@@ -114,5 +132,21 @@ require("lazy").setup({
       require("monokai-pro").setup({})
     end
   },
-  { 'folke/tokyonight.nvim' }
+  { 'folke/tokyonight.nvim' },
+  {'nyoom-engineering/oxocarbon.nvim'},
+  { "sainnhe/sonokai" },
+
+  -- Completion for neovim specific functions
+  {
+    "folke/neodev.nvim",
+    config = function()
+      require("neodev").setup({})
+    end
+  },
+
+  -- Terminal
+  { "akinsho/toggleterm.nvim" }
+
+
+
 })
