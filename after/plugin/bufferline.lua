@@ -6,7 +6,7 @@ end
 
 bufferline.setup{
 	options = {
-		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+		offsets = { { filetype = "neo-tree", text = "", padding = 1 } },
 	}
 }
 

@@ -36,8 +36,21 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
-
-  { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      {
+        "s1n7ax/nvim-window-picker",
+        config = function ()
+          require("window-picker").setup({})
+        end
+      },
+    }
+  },
 
   {
     "folke/which-key.nvim",
@@ -60,16 +73,21 @@ require("lazy").setup({
     config = function() require("nvim-autopairs").setup {} end
   },
 
+  -- Clipboard management
+  {
+    "AckslD/nvim-neoclip.lua",
+    dependencies = {
+      {'nvim-telescope/telescope.nvim'},
+      {'kkharji/sqlite.lua', module = 'sqlite'},
+    }
+  },
+
+  -- Terminal
+  { "akinsho/toggleterm.nvim" },
+
   -- Movement
   { "ggandor/leap.nvim" },
   { "ggandor/flit.nvim", dependencies = { { "ggandor/leap.nvim" } } },
-  {
-    "ggandor/leap-spooky.nvim",
-    dependencies = { { "ggandor/leap.nvim" } },
-    config = function()
-      require('leap-spooky').setup {}
-    end
-  },
 
   -- Git
   {
@@ -79,6 +97,12 @@ require("lazy").setup({
     end
   },
   { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+  -- TODO: choose one between these
+  { "tpope/vim-fugitive" },
+  {
+    "TimUntersberger/neogit",
+    dependencies = { { "nvim-lua/plenary.nvim" }, { "sindrets/diffview.nvim" } }
+  },
 
   -- LSP
   {
@@ -104,17 +128,27 @@ require("lazy").setup({
     }
   },
 
-  { "romainl/vim-cool" }, -- disable search highlights after moving the cursor
-
+  -- Text objects
+  { "tpope/vim-surround" },
+  { "wellle/targets.vim" },
   {
-    'numToStr/Comment.nvim',
+    "ggandor/leap-spooky.nvim",
+    dependencies = { { "ggandor/leap.nvim" } },
     config = function()
-      require('Comment').setup()
+      require('leap-spooky').setup {}
     end
   },
 
-  { "tpope/vim-surround" },
-  { "tpope/vim-fugitive" },
+  -- Folds
+  {'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},  -- Use TS or LSP as folds providers
+  { 'anuvyklack/pretty-fold.nvim' },  -- Make folds look better
+  {  -- Preview folds without opening them
+    'anuvyklack/fold-preview.nvim',
+    dependencies = 'anuvyklack/keymap-amend.nvim',
+    config = function()
+      require('fold-preview').setup({})
+    end
+  },
 
   -- Fancy UI overrides
   {
@@ -136,17 +170,21 @@ require("lazy").setup({
   {'nyoom-engineering/oxocarbon.nvim'},
   { "sainnhe/sonokai" },
 
-  -- Completion for neovim specific functions
-  {
+  -- Misc
+  { "famiu/bufdelete.nvim" },  -- close buffers without messing up the window layout
+  {  -- completion for neovim specific functions
     "folke/neodev.nvim",
     config = function()
       require("neodev").setup({})
     end
   },
-
-  -- Terminal
-  { "akinsho/toggleterm.nvim" }
-
-
-
+  { "romainl/vim-cool" }, -- disable search highlights after moving the cursor
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  },
+  { "tpope/vim-repeat" },
 })
+
