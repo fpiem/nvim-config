@@ -17,6 +17,7 @@ neo_tree.setup({
   window = {
     width = 35,
     mappings = {
+      ["<space>"] = "noop",
       ["l"] = "open",
       ["w"] = "open_with_window_picker",
       ["h"] = "close_node",
