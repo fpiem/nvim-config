@@ -26,6 +26,8 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 -- Faster vertical navigation
 vim.keymap.set("n", "J", "}", opts)
 vim.keymap.set("n", "K", "{", opts)
+vim.keymap.set("v", "J", "}", opts)
+vim.keymap.set("v", "K", "{", opts)
 
 -- Splits
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>", create_opts("Split vertically"))
@@ -36,3 +38,4 @@ vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
