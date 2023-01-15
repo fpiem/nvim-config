@@ -16,17 +16,7 @@ require("lazy").setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
-
-  -- Treesitter
-  {
-    'nvim-treesitter/nvim-treesitter',
-    lazy = false,
-    run = ':TSUpdate',
-  },
-  {
-    'nvim-treesitter/playground',
-    dependencies = { "nvim-treesitter/nvim-treesitter" }
-  },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
   {
     'akinsho/bufferline.nvim',
