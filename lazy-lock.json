@@ -15,6 +15,7 @@
   "fold-preview.nvim": { "branch": "main", "commit": "259276b104ac8c313f0a86a780a1cc4481b326e9" },
   "friendly-snippets": { "branch": "main", "commit": "484fb38b8f493ceeebf4e6fc499ebe41e10aae25" },
   "gitsigns.nvim": { "branch": "main", "commit": "f8a1e2a8c8bfb79fe2ee7e61bb76797350187efa" },
+  "harpoon": { "branch": "master", "commit": "21d0d1bfa3000e4384740bfaefa0ebc51c773786" },
   "indent-blankline.nvim": { "branch": "master", "commit": "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7" },
   "keymap-amend.nvim": { "branch": "master", "commit": "b8bf9d820878d5497fdd11d6de55dea82872d98e" },
   "lazy.nvim": { "branch": "main", "commit": "bcd87a02150d68d2ee187e61b97585e1b33110ce" },

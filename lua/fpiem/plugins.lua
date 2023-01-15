@@ -81,6 +81,7 @@ require("lazy").setup({
   -- Movement
   { "ggandor/leap.nvim" },
   { "ggandor/flit.nvim", dependencies = { { "ggandor/leap.nvim" } } },
+  {'ThePrimeagen/harpoon', dependencies = 'nvim-lua/plenary.nvim'},
 
   -- Git
   {
