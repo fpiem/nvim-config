@@ -81,7 +81,6 @@ require("lazy").setup({
   -- Movement
   { "ggandor/leap.nvim" },
   { "ggandor/flit.nvim", dependencies = { { "ggandor/leap.nvim" } } },
-  {'ThePrimeagen/harpoon', dependencies = 'nvim-lua/plenary.nvim'},
 
   -- Git
   {
@@ -173,12 +172,8 @@ require("lazy").setup({
     end
   },
   { "romainl/vim-cool" }, -- disable search highlights after moving the cursor
-  {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  },
   { "tpope/vim-repeat" },
+  {'ThePrimeagen/harpoon', dependencies = 'nvim-lua/plenary.nvim'},
+  { 'echasnovski/mini.nvim' }
 })
 
