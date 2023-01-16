@@ -36,8 +36,6 @@ vim.keymap.set("n", "<leader>h", ":split<CR>", create_opts("Split horizontally")
 -- Resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
-vim.set.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Replace a word with the " register, without overwriting the register
-vim.keymap.set("n", "S", "viw\"_dP")
