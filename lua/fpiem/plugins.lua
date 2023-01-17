@@ -121,6 +121,21 @@ require("lazy").setup({
     }
   },
 
+  -- Testing
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+
+      -- Adapters
+      "nvim-neotest/neotest-python",
+      "nvim-neotest/neotest-vim-test"
+    }
+  },
+  { "vim-test/vim-test" },
+
   -- Text objects
   { "tpope/vim-surround" },
   { "wellle/targets.vim" },
@@ -152,28 +167,35 @@ require("lazy").setup({
 
   -- Themes
   { "Mofiqul/dracula.nvim" },
-  { "Mofiqul/vscode.nvim" },
-  {
-    "loctvl842/monokai-pro.nvim",
-    config = function()
-      require("monokai-pro").setup({})
-    end
-  },
+  -- {
+  --   "loctvl842/monokai-pro.nvim",
+  --   config = function()
+  --     require("monokai-pro").setup({})
+  --   end
+  -- },
   { 'folke/tokyonight.nvim' },
   {'nyoom-engineering/oxocarbon.nvim'},
   { "sainnhe/sonokai" },
 
   -- Misc
-  { "famiu/bufdelete.nvim" },  -- close buffers without messing up the window layout
+  -- { "famiu/bufdelete.nvim" },  -- close buffers without messing up the window layout
+  -- TODO: replace above with version from mini.nvim
   {  -- completion for neovim specific functions
     "folke/neodev.nvim",
     config = function()
-      require("neodev").setup({})
+      require("neodev").setup({ plugins = {"neotest"}, types = true })
     end
   },
   { "romainl/vim-cool" }, -- disable search highlights after moving the cursor
   { "tpope/vim-repeat" },
   {'ThePrimeagen/harpoon', dependencies = 'nvim-lua/plenary.nvim'},
-  { 'echasnovski/mini.nvim' }
+  { 'echasnovski/mini.nvim' },
+  {
+  "folke/trouble.nvim",
+  dependencies = "nvim-tree/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {}
+  end
+}
 })
 
