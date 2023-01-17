@@ -12,4 +12,4 @@ if not status_ok then
 	return
 end
 
-vim.keymap.set("n", "<leader>b", ":lua require('telescope').extensions.neoclip.default()<CR>", { desc = "Search yanks" })
+vim.keymap.set("n", "<leader>sy", ":lua require('telescope').extensions.neoclip.default()<CR>", { desc = "Search yanks" })
