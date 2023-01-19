@@ -38,11 +38,23 @@ require("lazy").setup({
       "MunifTanjim/nui.nvim",
       {
         "s1n7ax/nvim-window-picker",
-        config = function ()
+        config = function()
           require("window-picker").setup({})
         end
       },
     }
+  },
+
+  {
+    "utilyre/barbecue.nvim",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("barbecue").setup()
+    end,
   },
 
   {
@@ -70,8 +82,8 @@ require("lazy").setup({
   {
     "AckslD/nvim-neoclip.lua",
     dependencies = {
-      {'nvim-telescope/telescope.nvim'},
-      {'kkharji/sqlite.lua', module = 'sqlite'},
+      { 'nvim-telescope/telescope.nvim' },
+      { 'kkharji/sqlite.lua', module = 'sqlite' },
     }
   },
 
@@ -148,9 +160,9 @@ require("lazy").setup({
   },
 
   -- Folds
-  {'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},  -- Use TS or LSP as folds providers
-  { 'anuvyklack/pretty-fold.nvim' },  -- Make folds look better
-  {  -- Preview folds without opening them
+  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' }, -- Use TS or LSP as folds providers
+  { 'anuvyklack/pretty-fold.nvim' }, -- Make folds look better
+  { -- Preview folds without opening them
     'anuvyklack/fold-preview.nvim',
     dependencies = 'anuvyklack/keymap-amend.nvim',
     config = function()
@@ -167,35 +179,53 @@ require("lazy").setup({
 
   -- Themes
   { "Mofiqul/dracula.nvim" },
-  -- {
-  --   "loctvl842/monokai-pro.nvim",
-  --   config = function()
-  --     require("monokai-pro").setup({})
-  --   end
-  -- },
   { 'folke/tokyonight.nvim' },
-  {'nyoom-engineering/oxocarbon.nvim'},
+  { 'nyoom-engineering/oxocarbon.nvim' },
   { "sainnhe/sonokai" },
 
   -- Misc
-  -- { "famiu/bufdelete.nvim" },  -- close buffers without messing up the window layout
-  -- TODO: replace above with version from mini.nvim
-  {  -- completion for neovim specific functions
+  { -- completion for neovim specific functions
     "folke/neodev.nvim",
     config = function()
-      require("neodev").setup({ plugins = {"neotest"}, types = true })
+      require("neodev").setup({
+        plugins = { "neotest" },
+        types = true,
+        dependencies = "VonHeikemen/lsp-zero.nvim"
+      })
     end
   },
   { "romainl/vim-cool" }, -- disable search highlights after moving the cursor
   { "tpope/vim-repeat" },
-  {'ThePrimeagen/harpoon', dependencies = 'nvim-lua/plenary.nvim'},
+
+  -- TODO: explore using this one
+  { 'ThePrimeagen/harpoon', dependencies = 'nvim-lua/plenary.nvim' },
+
   { 'echasnovski/mini.nvim' },
   {
-  "folke/trouble.nvim",
-  dependencies = "nvim-tree/nvim-web-devicons",
-  config = function()
-    require("trouble").setup {}
-  end
-}
-})
+    "folke/trouble.nvim",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
+    end
+  },
+  { "907th/vim-auto-save" },
 
+  { "AckslD/swenv.nvim" },
+
+  { 'mizlan/iswap.nvim' },
+
+  {
+    "ethanholz/nvim-lastplace",
+    config = function()
+      require("nvim-lastplace").setup {}
+    end
+  }
+
+  -- TODO: atm tab is set to trigger lsp, set that to ctrl + space and use this plugin
+  -- {
+  --   'abecodes/tabout.nvim',
+  --   config = function()
+  --     require("tabout").setup()
+  --   end
+  -- }
+})
