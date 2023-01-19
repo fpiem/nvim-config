@@ -6,13 +6,6 @@ end
 neo_tree.setup({
   default_component_configs = {
     close_if_last_window = true,
-    filesystem = {
-      filtered_items = {
-        visible = true,
-        hide_dotfiles = false,
-        hide_gitignored = false,
-      },
-    },
   },
   window = {
     width = 35,
@@ -22,9 +15,15 @@ neo_tree.setup({
       ["w"] = "open_with_window_picker",
       ["h"] = "close_node",
     }
-  }
+  },
+  filesystem = {
+    filtered_items = {
+      visible = true,
+      hide_gitignored = false
+    },
+  },
 })
 
 
-vim.keymap.set("n", "<leader>e", ":NeoTreeRevealToggle<CR>", { noremap = true, silent = true, desc = "Toggle the file tree" })
-
+vim.keymap.set("n", "<leader>e", ":NeoTreeRevealToggle<CR>",
+  { noremap = true, silent = true, desc = "Toggle the file tree" })
