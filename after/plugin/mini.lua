@@ -5,3 +5,5 @@ end
 
 require('mini.move').setup()
 require('mini.comment').setup()
+require('mini.bufremove').setup()
+
