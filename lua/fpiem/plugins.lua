@@ -20,6 +20,11 @@ require("lazy").setup({
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { 'nvim-treesitter/playground' },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
+  {
+    "ckolkey/ts-node-action",
+    dependencies = { 'nvim-treesitter' },
+    opts = {},
+  },
 
   {
     'akinsho/bufferline.nvim',
@@ -45,18 +50,19 @@ require("lazy").setup({
     }
   },
 
-  {
-    "utilyre/barbecue.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("barbecue").setup()
-    end,
-  },
-
+  -- Disabled, but it could be cool to have in lualine
+  -- {
+  --   "utilyre/barbecue.nvim",
+  --   dependencies = {
+  --     "neovim/nvim-lspconfig",
+  --     "SmiteshP/nvim-navic",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   config = function ()
+  --     require("barbecue").setup{}
+  --   end
+  -- },
+  --
   {
     "folke/which-key.nvim",
     config = function()
@@ -132,6 +138,18 @@ require("lazy").setup({
       { 'rafamadriz/friendly-snippets' },
     }
   },
+
+  -- Debugging
+  { "mfussenegger/nvim-dap" },
+  { "rcarriga/nvim-dap-ui" },
+  { "mfussenegger/nvim-dap-python" },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    config = function()
+      require("nvim-dap-virtual-text").setup()
+    end
+  },
+  { "nvim-telescope/telescope-dap.nvim" },
 
   -- Testing
   {
@@ -218,6 +236,14 @@ require("lazy").setup({
     "ethanholz/nvim-lastplace",
     config = function()
       require("nvim-lastplace").setup {}
+    end
+  },
+
+  {
+    "zbirenbaum/neodim",
+    event = "LspAttach",
+    config = function()
+      require("neodim").setup({ alpha = 0.66 })
     end
   }
 
