@@ -8,10 +8,10 @@ end
 vim.g.mapleader = " "
 
 -- Swap colon and semicolon
-vim.keymap.set("n", ":", ";", opts)
-vim.keymap.set("n", ";", ":", opts)
-vim.keymap.set("v", ":", ";", opts)
-vim.keymap.set("v", ";", ":", opts)
+vim.keymap.set("n", ":", ";")
+vim.keymap.set("n", ";", ":")
+vim.keymap.set("v", ":", ";")
+vim.keymap.set("v", ";", ":")
 
 -- Buffer navigation
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
