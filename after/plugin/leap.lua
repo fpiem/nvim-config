@@ -3,8 +3,6 @@ if not status_ok then
 	return
 end
 
-local M = {}
-
 -- Searching in all windows (including the current one) on the tab page.
 function leap_all_windows()
 	local focusable_windows_on_tabpage = vim.tbl_filter(function(win)
@@ -22,4 +20,3 @@ end
 
 vim.api.nvim_set_keymap("n", "s", ":lua leap_all_windows()<CR>", { noremap = true, silent = true })
 
-return M

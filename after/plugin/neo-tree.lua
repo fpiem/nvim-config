@@ -24,6 +24,7 @@ neo_tree.setup({
   },
 })
 
-
-vim.keymap.set("n", "<leader>e", ":NeoTreeRevealToggle<CR>",
-  { noremap = true, silent = true, desc = "Toggle the file tree" })
+vim.keymap.set(
+  "n", "<leader>e", ":NeoTreeRevealToggle<CR>",
+  { noremap = true, silent = true, desc = "Toggle the file tree" }
+)
