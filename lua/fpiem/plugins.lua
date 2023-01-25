@@ -25,6 +25,12 @@ require("lazy").setup({
     dependencies = { 'nvim-treesitter' },
     opts = {},
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function ()
+      require("treesitter-context").setup{ }
+    end
+  },
 
   {
     'akinsho/bufferline.nvim',
@@ -258,6 +264,9 @@ require("lazy").setup({
     end
   },
 
+  {"stevearc/aerial.nvim"},
+
+  { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
   -- TODO: atm tab is set to trigger lsp, set that to ctrl + space and use this plugin
   -- {
   --   'abecodes/tabout.nvim',

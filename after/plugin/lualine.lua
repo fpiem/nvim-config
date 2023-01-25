@@ -62,7 +62,7 @@ lualine.setup({
       { 'mode', separator = { left = '' }, right_padding = 2 },
     },
 		lualine_b = { branch, diff },
-		lualine_c = {  },
+		lualine_c = {{  "aerial" } },
 		lualine_x = { spaces, "encoding", filetype },
 		lualine_y = { diagnostics },
     lualine_z = {
