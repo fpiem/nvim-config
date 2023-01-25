@@ -245,7 +245,18 @@ require("lazy").setup({
     config = function()
       require("neodim").setup({ alpha = 0.66 })
     end
-  }
+  },
+
+  {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        execution_message = {
+          message = ""
+        }
+      }
+    end
+  },
 
   -- TODO: atm tab is set to trigger lsp, set that to ctrl + space and use this plugin
   -- {
