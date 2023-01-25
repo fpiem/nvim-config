@@ -39,4 +39,10 @@ vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- Window manipulation
+vim.keymap.set("n", "<leader>wv", "<C-w>v", create_opts("Split vertically"))
+vim.keymap.set("n", "<leader>wh", "<C-w>h", create_opts("Split horizontally"))
+vim.keymap.set("n", "<leader>wq", "<C-w>q", create_opts("Close windows"))
+vim.keymap.set("n", "<leader>w=", "<C-w>=", create_opts("Equalize window size"))
+
 -- TODO: see theprimeagen's remaps
