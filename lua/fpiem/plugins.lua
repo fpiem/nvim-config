@@ -16,6 +16,13 @@ require("lazy").setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
+  {
+    "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      require "telescope".load_extension("frecency")
+    end,
+    dependencies = { "kkharji/sqlite.lua" }
+  },
 
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { 'nvim-treesitter/playground' },
@@ -263,7 +270,7 @@ require("lazy").setup({
       }
     end
   },
-
+  
   { "stevearc/aerial.nvim" },
 
   { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' },
@@ -274,7 +281,8 @@ require("lazy").setup({
     config = function()
       require("spectre").setup()
     end
-  }
+  },
+
   -- TODO: atm tab is set to trigger lsp, set that to ctrl + space and use this plugin
   -- {
   --   'abecodes/tabout.nvim',
