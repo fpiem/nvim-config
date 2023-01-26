@@ -9,3 +9,4 @@ vim.keymap.set("n", "<leader>fa", builtin.find_files, { desc = "Search all files
 vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Search Git files" })
 vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Search recent files" })
 vim.keymap.set("n", "<leader>F", builtin.live_grep, { desc = "Live grep" } )
+

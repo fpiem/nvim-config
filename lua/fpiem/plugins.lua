@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- TODO: check out telescope extensions, some are quite cool
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
@@ -22,6 +23,25 @@ require("lazy").setup({
       require "telescope".load_extension("frecency")
     end,
     dependencies = { "kkharji/sqlite.lua" }
+  },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+    config = function()
+      require('telescope').load_extension('fzf')
+    end
+  },
+  {
+    "nvim-telescope/telescope-project.nvim",
+    config = function()
+      require 'telescope'.load_extension('project')
+    end
+  },
+  {
+    'nvim-telescope/telescope-ui-select.nvim',
+    config = function()
+      require("telescope").load_extension("ui-select")
+    end,
   },
 
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -213,6 +233,18 @@ require("lazy").setup({
   { 'folke/tokyonight.nvim' },
   { 'nyoom-engineering/oxocarbon.nvim' },
   { "sainnhe/sonokai" },
+  {
+    'AlexvZyl/nordic.nvim',
+    config = function()
+      require("nordic").setup {
+        telescope = {
+          style = "classic"
+        },
+      }
+    end
+  },
+  { "loctvl842/monokai-pro.nvim" },
+
 
   -- Misc
   { -- completion for neovim specific functions
@@ -270,7 +302,7 @@ require("lazy").setup({
       }
     end
   },
-  
+
   { "stevearc/aerial.nvim" },
 
   { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' },
@@ -280,6 +312,14 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("spectre").setup()
+    end
+  },
+
+  -- IDE-like features
+  { -- Restore last session in CWD when nvim is started with no arguments
+    "rmagatti/auto-session",
+    config = function()
+      require("auto-session").setup {}
     end
   },
 

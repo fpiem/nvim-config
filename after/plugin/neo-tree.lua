@@ -21,6 +21,7 @@ neo_tree.setup({
       visible = true,
       hide_gitignored = false
     },
+    follow_current_file = true
   },
 })
 
