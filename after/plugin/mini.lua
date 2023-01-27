@@ -1,4 +1,4 @@
-local status_ok, mini = pcall(require, "mini")
+local status_ok, mini = pcall(require, "mini.move")
 if not status_ok then
 	return
 end

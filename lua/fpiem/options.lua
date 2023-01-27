@@ -56,3 +56,8 @@ vim.cmd[[
 -- Avoid auto-continuation of comments
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+function ToggleLineNumbers()
+  vim.api.nvim_command("set relativenumber!")
+end
+vim.keymap.set("n", "<leader>R", ":lua ToggleLineNumbers()<CR>", { desc = "Toggle relative/absolute line numbers" })

@@ -135,50 +135,52 @@ require("lazy").setup({
     dependencies = { { "nvim-lua/plenary.nvim" }, { "sindrets/diffview.nvim" } }
   },
 
-  -- Lsp 
+  -- Lsp
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},           -- Optional
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+      { 'neovim/nvim-lspconfig' }, -- Required
+      { 'williamboman/mason.nvim' }, -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},         -- Required
-      {'hrsh7th/cmp-nvim-lsp'},     -- Required
-      {'hrsh7th/cmp-buffer'},       -- Optional
-      {'hrsh7th/cmp-path'},         -- Optional
-      {'saadparwaiz1/cmp_luasnip'}, -- Optional
-      {'hrsh7th/cmp-nvim-lua'},     -- Optional
+      { 'hrsh7th/nvim-cmp' }, -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'hrsh7th/cmp-buffer' }, -- Optional
+      { 'hrsh7th/cmp-path' }, -- Optional
+      { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+      { 'hrsh7th/cmp-nvim-lua' }, -- Optional
 
       -- Snippets
-      {'L3MON4D3/LuaSnip'},             -- Required
-      {'rafamadriz/friendly-snippets'}, -- Optional
+      { 'L3MON4D3/LuaSnip' }, -- Required
+      { 'rafamadriz/friendly-snippets' }, -- Optional
     }
   },
 
+  -- Dim unused variables
+  -- TODO: i still want diagnostics on the side
+  {
+    "zbirenbaum/neodim",
+    event = "LspAttach",
+    config = function()
+      require("neodim").setup({
+        alpha = 0.66,
+        hide = {
+          signs = false
+        }
+      })
+    end
+  },
 
-  -- -- Dim unused variables
-  -- {
-  --   "zbirenbaum/neodim",
-  --   event = "LspAttach",
-  --   config = function()
-  --     require("neodim").setup({ alpha = 0.66 })
-  --   end
-  -- },
-  -- -- Completion for neovim specific functions
-  -- {
-  --   "folke/neodev.nvim",
-  --   config = function()
-  --     require("neodev").setup({
-  --       plugins = { "neotest" },
-  --       types = true,
-  --       dependencies = "VonHeikemen/lsp-zero.nvim"
-  --     })
-  --   end
-  -- },
+  { "jose-elias-alvarez/null-ls.nvim" },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    config = function()
+      require("mason-null-ls").setup {}
+    end
+  },
 
   -- Debugging
   { "mfussenegger/nvim-dap" },
