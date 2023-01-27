@@ -28,3 +28,8 @@ lsp_zero.setup_nvim_cmp({
 
 lsp_zero.setup()
 
+--
+-- vim.keymap.set("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", {desc = "Format document"})
+-- vim.keymap.set("n", "<leader>ls", ":lua vim.lsp.buf.signature_help()<CR>", {desc = "Show function signature"})
+-- vim.keymap.set("n", "<leader>lh", ":lua vim.lsp.buf.signature_help()<CR>", {desc = "Show hover"})
+
