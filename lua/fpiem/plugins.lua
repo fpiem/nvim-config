@@ -83,19 +83,6 @@ require("lazy").setup({
     }
   },
 
-  -- Disabled, but it could be cool to have in lualine
-  -- {
-  --   "utilyre/barbecue.nvim",
-  --   dependencies = {
-  --     "neovim/nvim-lspconfig",
-  --     "SmiteshP/nvim-navic",
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  --   config = function ()
-  --     require("barbecue").setup{}
-  --   end
-  -- },
-  --
   {
     "folke/which-key.nvim",
     config = function()
@@ -148,29 +135,50 @@ require("lazy").setup({
     dependencies = { { "nvim-lua/plenary.nvim" }, { "sindrets/diffview.nvim" } }
   },
 
-  -- LSP
+  -- Lsp 
   {
     'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
     dependencies = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig' },
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
+      {'neovim/nvim-lspconfig'},             -- Required
+      {'williamboman/mason.nvim'},           -- Optional
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-nvim-lua' },
+      {'hrsh7th/nvim-cmp'},         -- Required
+      {'hrsh7th/cmp-nvim-lsp'},     -- Required
+      {'hrsh7th/cmp-buffer'},       -- Optional
+      {'hrsh7th/cmp-path'},         -- Optional
+      {'saadparwaiz1/cmp_luasnip'}, -- Optional
+      {'hrsh7th/cmp-nvim-lua'},     -- Optional
 
       -- Snippets
-      { 'L3MON4D3/LuaSnip' },
-      -- Snippet Collection (Optional)
-      { 'rafamadriz/friendly-snippets' },
+      {'L3MON4D3/LuaSnip'},             -- Required
+      {'rafamadriz/friendly-snippets'}, -- Optional
     }
   },
+
+
+  -- -- Dim unused variables
+  -- {
+  --   "zbirenbaum/neodim",
+  --   event = "LspAttach",
+  --   config = function()
+  --     require("neodim").setup({ alpha = 0.66 })
+  --   end
+  -- },
+  -- -- Completion for neovim specific functions
+  -- {
+  --   "folke/neodev.nvim",
+  --   config = function()
+  --     require("neodev").setup({
+  --       plugins = { "neotest" },
+  --       types = true,
+  --       dependencies = "VonHeikemen/lsp-zero.nvim"
+  --     })
+  --   end
+  -- },
 
   -- Debugging
   { "mfussenegger/nvim-dap" },
@@ -247,16 +255,6 @@ require("lazy").setup({
 
 
   -- Misc
-  { -- completion for neovim specific functions
-    "folke/neodev.nvim",
-    config = function()
-      require("neodev").setup({
-        plugins = { "neotest" },
-        types = true,
-        dependencies = "VonHeikemen/lsp-zero.nvim"
-      })
-    end
-  },
   { "romainl/vim-cool" }, -- disable search highlights after moving the cursor
   { "tpope/vim-repeat" },
 
@@ -284,13 +282,6 @@ require("lazy").setup({
     end
   },
 
-  {
-    "zbirenbaum/neodim",
-    event = "LspAttach",
-    config = function()
-      require("neodim").setup({ alpha = 0.66 })
-    end
-  },
 
   {
     "Pocco81/auto-save.nvim",
@@ -323,7 +314,6 @@ require("lazy").setup({
     end
   },
 
-  -- TODO: atm tab is set to trigger lsp, set that to ctrl + space and use this plugin
   -- {
   --   'abecodes/tabout.nvim',
   --   config = function()
