@@ -160,18 +160,9 @@ require("lazy").setup({
   },
 
   -- Dim unused variables
-  -- TODO: i still want diagnostics on the side
   {
     "zbirenbaum/neodim",
     event = "LspAttach",
-    config = function()
-      require("neodim").setup({
-        alpha = 0.66,
-        hide = {
-          signs = false
-        }
-      })
-    end
   },
 
   { "jose-elias-alvarez/null-ls.nvim" },
@@ -308,18 +299,11 @@ require("lazy").setup({
     end
   },
 
-  -- IDE-like features
-  { -- Restore last session in CWD when nvim is started with no arguments
-    "rmagatti/auto-session",
-    config = function()
-      require("auto-session").setup {}
-    end
-  },
 
-  -- {
-  --   'abecodes/tabout.nvim',
-  --   config = function()
-  --     require("tabout").setup()
-  --   end
-  -- }
+  {
+    'abecodes/tabout.nvim',
+    config = function()
+      require("tabout").setup{}
+    end
+  }
 })
