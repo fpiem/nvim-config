@@ -158,13 +158,11 @@ require("lazy").setup({
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
   },
-
   -- Dim unused variables
   {
     "zbirenbaum/neodim",
     event = "LspAttach",
   },
-
   { "jose-elias-alvarez/null-ls.nvim" },
   {
     "jay-babu/mason-null-ls.nvim",
@@ -172,6 +170,7 @@ require("lazy").setup({
       require("mason-null-ls").setup {}
     end
   },
+  { "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim" },
 
   -- Debugging
   { "mfussenegger/nvim-dap" },
@@ -245,7 +244,6 @@ require("lazy").setup({
     end
   },
   { "loctvl842/monokai-pro.nvim" },
-
 
   -- Misc
   { "romainl/vim-cool" }, -- disable search highlights after moving the cursor

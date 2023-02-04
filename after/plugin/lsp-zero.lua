@@ -40,5 +40,5 @@ vim.keymap.set("n", "<leader>lh", ":lua vim.lsp.buf.signature_help()<CR>", { des
 vim.keymap.set("n", "<leader>lr", ":lua vim.lsp.buf.rename()<CR>", { desc = "Rename symbol" })
 vim.keymap.set("n", "<leader>li", ":lua vim.lsp.buf.implementation()<CR>", { desc = "List implementations" })
 vim.keymap.set("n", "<leader>lR", ":lua vim.lsp.buf.references()<CR>", { desc = "List references" })
-vim.keymap.set("n", "<leader>lt", ":lua vim.lsp.buf.type_definition()<CR>", { desc = "Go to type definition" })
+vim.keymap.set("n", "<leader>lT", ":lua vim.lsp.buf.type_definition()<CR>", { desc = "Go to type definition" })
 vim.keymap.set("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", { desc = "Code actions" })
