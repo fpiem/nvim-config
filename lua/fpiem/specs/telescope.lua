@@ -3,10 +3,10 @@ return {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         dependencies = { { 'nvim-lua/plenary.nvim' } },
         keys = {
-            { "<leader>fa", ":lua require('telescope.builtin').find_files<CR>", desc = "Search all files" },
-            { "<leader>fg", ":lua require('telescope.builtin').git_files<CR>", desc = "Search Git files" },
-            { "<leader>fr", ":lua require('telescope.builtin').oldfiles<CR>", desc = "Search recent files" },
-            { "<leader>F", ":lua require('telescope.builtin').live_grep<CR>", desc = "Live grep" },
+            { "<leader>fa", ":lua require('telescope.builtin').find_files()<CR>", desc = "Search all files" },
+            { "<leader>fg", ":lua require('telescope.builtin').git_files()<CR>", desc = "Search Git files" },
+            { "<leader>fr", ":lua require('telescope.builtin').oldfiles()<CR>", desc = "Search recent files" },
+            { "<leader>F", ":lua require('telescope.builtin').live_grep()<CR>", desc = "Live grep" },
         },
         lazy = false
     },

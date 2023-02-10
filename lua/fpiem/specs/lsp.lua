@@ -55,7 +55,17 @@ return {
             { 'rafamadriz/friendly-snippets' }, -- Optional
         },
         config = lsp_zero_config,
-        lazy = false
+        keys = {
+            { "<leader>lf", ":lua vim.lsp.buf.format()<CR>", desc = "Format document" },
+            { "<leader>ls", ":lua vim.lsp.buf.signature_help()<CR>", desc = "Show function signature" },
+            { "<leader>lh", ":lua vim.lsp.buf.signature_help()<CR>", desc = "Show hover" },
+            { "<leader>lr", ":lua vim.lsp.buf.rename()<CR>", desc = "Rename symbol" },
+            { "<leader>li", ":lua vim.lsp.buf.implementation()<CR>", desc = "List implementations" },
+            { "<leader>lR", ":lua vim.lsp.buf.references()<CR>", desc = "List references" },
+            { "<leader>lT", ":lua vim.lsp.buf.type_definition()<CR>", desc = "Go to type definition" },
+            { "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", desc = "Code actions" },
+        },
+        lazy = false,
     },
 
     -- Dim unused variables
