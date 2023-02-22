@@ -1,7 +1,7 @@
 local merge_tables = require("fpiem.utils").merge_tables
 local opts = { noremap = true, silent = true }
 local create_opts = function(description)
-  return merge_tables(opts, { desc = description })
+	return merge_tables(opts, { desc = description })
 end
 
 -- Set space as the leader

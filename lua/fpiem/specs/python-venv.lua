@@ -1,8 +1,3 @@
-local status_ok, swenv = pcall(require, "swenv")
-if not status_ok then
-	return
-end
-
 local is_home_dir = function()
 	return vim.fn.getcwd(0) == vim.fn.expand("$HOME")
 end
@@ -26,7 +21,7 @@ local get_python_interpreters = function()
 	table.sort(paths)
 	for i, path in ipairs(paths) do
 		if path ~= paths[i + 1] then
-      -- TODO: extract names from env folder, then consider adding venv to lualine
+			-- TODO: extract names from env folder, then consider adding venv to lualine
 			table.insert(res, { name = "", path = path })
 		end
 	end
@@ -34,12 +29,18 @@ local get_python_interpreters = function()
 	return res
 end
 
-swenv.setup({
-	get_venvs = function(_)
-		return get_python_interpreters()
-	end,
-	post_set_venv = function(_)
-		vim.cmd("LspRestart")
-	end,
-})
-
+return {
+	{
+		"AckslD/swenv.nvim",
+		config = function()
+			require("swenv").setup({
+				get_venvs = function(_)
+					return get_python_interpreters()
+				end,
+				post_set_venv = function(_)
+					vim.cmd("LspRestart")
+				end,
+			})
+		end,
+	},
+}

@@ -1,4 +1,3 @@
 if vim.g.vscode == nil then
-  require("fpiem")
+	require("fpiem")
 end
-

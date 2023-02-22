@@ -1,4 +1,4 @@
-vim.cmd [[ 
+vim.cmd([[ 
   nnoremap j gj
   nnoremap k gk
 
@@ -99,4 +99,4 @@ vim.cmd [[
   " autocmd InsertEnter * :call VSCodeNotify('settings.cycle.neovimInsertModeColor')
   " autocmd InsertLeave * :call VSCodeNotify('settings.cycle.neovimNormalModeColor')
   " nnoremap v :call VSCodeNotify('settings.cycle.neovimVisualModeColor')<CR>v
-]]
+]])
