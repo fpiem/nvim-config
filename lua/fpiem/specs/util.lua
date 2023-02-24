@@ -2,6 +2,7 @@ return {
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-surround" },
 	{ "wellle/targets.vim" },
+  { "chaoren/vim-wordmotion" },
 
 	{
 		"windwp/nvim-autopairs",
