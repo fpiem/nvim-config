@@ -33,6 +33,13 @@ local lsp_zero_config = function()
 end
 
 return {
+  {
+    "folke/neodev.nvim",
+    config = function ()
+      require("neodev").setup({})
+    end
+  },
+
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
