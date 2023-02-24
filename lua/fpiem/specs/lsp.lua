@@ -64,6 +64,7 @@ return {
 			{ "<leader>lR", ":lua vim.lsp.buf.references()<CR>", desc = "List references" },
 			{ "<leader>lT", ":lua vim.lsp.buf.type_definition()<CR>", desc = "Go to type definition" },
 			{ "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", desc = "Code actions" },
+			{ "gl", ":lua vim.diagnostic.open_float()<CR>", desc = "Show line diagnostics" },
 		},
 		lazy = false,
 	},
