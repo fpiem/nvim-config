@@ -69,5 +69,7 @@ return {
 		end,
 	},
 
-	{ "mizlan/iswap.nvim" },
+
+  {"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
+
 }
