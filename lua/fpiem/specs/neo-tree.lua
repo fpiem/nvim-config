@@ -1,8 +1,6 @@
 local neo_tree_config = function()
 	require("neo-tree").setup({
-		default_component_configs = {
-			close_if_last_window = true,
-		},
+    close_if_last_window = true,
 		window = {
 			width = 35,
 			mappings = {
@@ -39,7 +37,7 @@ return {
 		},
 		config = neo_tree_config,
 		keys = {
-			{ "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle NeoTree" },
 		},
 		lazy = false,
 	},

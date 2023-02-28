@@ -12,7 +12,21 @@ return {
 			{ "s", leap_all_windows, desc = "Leap all windows" },
 		},
 	},
-	{ "ggandor/flit.nvim", dependencies = { { "ggandor/leap.nvim" } } },
+	{
+		"ggandor/flit.nvim",
+		dependencies = { { "ggandor/leap.nvim" } },
+		config = function()
+			require("flit").setup({
+				keys = { f = "f", F = "F", t = "t", T = "T" },
+				-- A string like "nv", "nvo", "o", etc.
+				labeled_modes = "nv",
+				multiline = true,
+				-- Like `leap`s similar argument (call-specific overrides).
+				-- E.g.: opts = { equivalence_classes = {} }
+				opts = {},
+			})
+		end,
+	},
 	{
 		"ggandor/leap-spooky.nvim",
 		dependencies = { { "ggandor/leap.nvim" } },

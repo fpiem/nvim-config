@@ -9,5 +9,6 @@ return {
 				},
 			})
 		end,
+    cond = vim.g.vscode == nil
 	},
 }

@@ -2,7 +2,8 @@ return {
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-surround" },
 	{ "wellle/targets.vim" },
-  { "chaoren/vim-wordmotion" },
+	{ "chaoren/vim-wordmotion" },
+	{ "tpope/vim-speeddating" },
 
 	{
 		"windwp/nvim-autopairs",
@@ -69,7 +70,12 @@ return {
 		end,
 	},
 
+	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 
-  {"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
-
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 }
