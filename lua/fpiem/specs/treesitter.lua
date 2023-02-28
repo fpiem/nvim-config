@@ -71,6 +71,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
+		dependencies = { "nvim-treesitter" },
 		config = function()
 			require("treesitter-context").setup({})
 		end,

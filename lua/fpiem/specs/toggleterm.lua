@@ -38,5 +38,6 @@ return {
 				},
 			})
 		end,
+    conf = vim.g.vscode == nil
 	},
 }

@@ -13,4 +13,5 @@ return {
 	keys = {
 		{ "<leader>A", "<cmd>AerialToggle!<CR>", desc = "Toggle Aerial" },
 	},
+  cond = vim.g.vscode == nil
 }

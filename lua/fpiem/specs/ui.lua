@@ -57,6 +57,7 @@ return {
 		"folke/noice.nvim",
 		dependencies = { { "MunifTanjim/nui.nvim" } },
 		config = noice_config,
+    cond = vim.g.vscode == nil
 	},
 	{ "stevearc/dressing.nvim" },
 }
