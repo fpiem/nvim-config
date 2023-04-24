@@ -75,5 +75,6 @@ return {
 		"nvim-lualine/lualine.nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 		config = lualine_config,
+    cond = vim.g.vscode == nil
 	},
 }

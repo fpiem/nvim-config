@@ -22,4 +22,14 @@ M.dump_table = function(tab)
 	end
 end
 
+M.toggleLineNumbers = function()
+	if vim.o.relativenumber == true then
+		vim.o.number = true
+		vim.o.relativenumber = false
+	else
+		vim.o.relativenumber = true
+		vim.o.number = false
+	end
+end
+
 return M

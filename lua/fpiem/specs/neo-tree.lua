@@ -38,7 +38,9 @@ return {
 		config = neo_tree_config,
 		keys = {
 			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle NeoTree" },
+			{ "<leader>E", "<cmd>Neotree toggle<cr>", desc = "Focus NeoTree" },
 		},
 		lazy = false,
+    cond = vim.g.vscode == nil
 	},
 }

@@ -41,7 +41,10 @@ return {
 	{ "romainl/vim-cool" },
 
 	-- Highlight the word under the cursor
-	{ "RRethy/vim-illuminate" },
+	{
+		"RRethy/vim-illuminate",
+		cond = vim.g.vscode == nil, -- VSCode can do this natively
+	},
 
 	{
 		"abecodes/tabout.nvim",
@@ -70,12 +73,15 @@ return {
 		end,
 	},
 
-	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+	{
+		"willothy/flatten.nvim",
+		config = true,
+		lazy = false,
+		priority = 1001,
+	},
 
 	{
-		"iamcco/markdown-preview.nvim",
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
+		"m4xshen/smartcolumn.nvim",
+		opts = {},
 	},
 }

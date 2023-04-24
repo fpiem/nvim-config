@@ -16,9 +16,6 @@ local null_ls_config = function()
 
 				-- Lua
 				formatting.stylua,
-
-				-- JS
-				formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 			},
 		}),
 	})

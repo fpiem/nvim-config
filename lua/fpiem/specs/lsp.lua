@@ -74,6 +74,7 @@ return {
 			{ "gl", ":lua vim.diagnostic.open_float()<CR>", desc = "Show line diagnostics" },
 		},
 		lazy = false,
+    cond = vim.g.vscode == nil
 	},
 
 	-- Dim unused variables
@@ -105,6 +106,7 @@ return {
 			{ "<leader>lts", "<Plug>(toggle-lsp-diag-signs)", desc = "Toggle signs" },
 		},
 		lazy = false,
+    cond = vim.g.vscode == nil
 	},
 
 	-- Scala metals
